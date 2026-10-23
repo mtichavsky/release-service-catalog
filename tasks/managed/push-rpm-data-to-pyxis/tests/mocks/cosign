@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+jq -e '.publicKey == "k8s://rhtap-releng-tenant/ibm-public-key"' \
+  <<< "${ENTERPRISE_CONTRACT_POLICY}" >/dev/null
+
 echo "$*" >> "$(params.dataDir)/mock_cosign.txt"
 
 output_file=""
@@ -20,4 +23,3 @@ fi
 
 mkdir -p "$(dirname "${output_file}")"
 echo '{"spdxVersion": "SPDX-2.3", "packages": []}' > "${output_file}"
-

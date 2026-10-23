@@ -113,6 +113,8 @@ spec:
       params:
         - name: pyxisJsonPath
           value: pyxis.json
+        - name: enterpriseContractPolicy
+          value: '{"publicKey":"k8s://rhtap-releng-tenant/ibm-public-key"}'
         - name: pyxisSecret
           value: test-push-rpm-data-to-pyxis-cert
         - name: server

@@ -747,6 +747,8 @@ spec:
       params:
         - name: pyxisJsonPath
           value: $(tasks.create-pyxis-image.results.pyxisDataPath)
+        - name: enterpriseContractPolicy
+          value: $(params.enterpriseContractPolicy)
         - name: server
           value: $(tasks.collect-task-params.results.extractedValues[3])
         - name: pyxisSecret
